@@ -40,10 +40,8 @@ image::imgs/featherwing_oled_buttons.jpg[Featherwing OLED buttons]
 
 Now, let's see how we can use interrupts to avoid to have to manage all in the main loop :
 
-[syntax, arduino]
-----
 include::./Feather_OLED_Test02/Feather_OLED_Test02.ino[]
-----
+
 
 
 
