@@ -36,12 +36,16 @@ This featherwing have 4 buttons:
 - a reset button
 - 3 generic buttons affected to PINs #9 (A), #6 (B) and #15 (C) (at least for the Adafruit MO based on SAMD21).
 
-image::imgs/featherwing_oled_buttons.jpg[Featherwing OLED buttons]
+image::./_docs/imgs/featherwing_oled_buttons.jpg[Featherwing OLED buttons]
 
 Now, let's see how we can use interrupts to avoid to have to manage all in the main loop :
 
 include::./Feather_OLED_Test02/Feather_OLED_Test02.ino[]
 
 
+For memory, the use of Interrupt for case like this work as the following :
 
+- First, all variables used in the ISR (the code called by the interrupt), must be declared as volatile
+- Second, declare the ISR with teh following signature: void ISR (void)
+- Third, attach the ISR to the correct interrupt and the correct Pin (using attachInterrrupt and digitalPinToInterrupt)
 
